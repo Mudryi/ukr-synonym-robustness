@@ -1,0 +1,10 @@
+transformers
+torch
+pandas
+numpy
+tqdm
+
+fasttext
+
+pymorphy2
+pymorphy2-dicts-uk
