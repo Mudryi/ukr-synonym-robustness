@@ -1,0 +1,17 @@
+# reviews
+dataset_path = '/home/mudryi/phd_projects/xml-roberta-finetune-reviews/cross_domain_uk_reviews/test_reviews.csv'
+model_path = "/home/mudryi/phd_projects/xml-roberta-finetune-reviews/trained_models/7ddc/model_7ddc_7_600" # reviews ukr-roberta
+model_path = "/home/mudryi/phd_projects/xml-roberta-finetune-reviews/trained_models/7yuz/model_7yuz_4_1200" # reviews sentence transformer
+model_path = "/home/mudryi/phd_projects/xml-roberta-finetune-reviews/trained_models/tmdk/model_tmdk_7_600" # reviews xml_roberta
+
+# news
+dataset_path = '/home/mudryi/phd_projects/xml-roberta-finetune-reviews/ua-news/test.csv'
+# model_path = '/home/mudryi/phd_projects/xml-roberta-finetune-reviews/trained_models/npz4/model_npz4_9_1000' # uanews ukr-roberta
+# model_path = '/home/mudryi/phd_projects/xml-roberta-finetune-reviews/trained_models/1kjq/model_1kjq_9_2500' # uanews sentence transformer
+# model_path = '/home/mudryi/phd_projects/xml-roberta-finetune-reviews/trained_models/3rzr/model_3rzr_9_2500' # uanews xml_roberta
+
+# unlp
+dataset_path = '/home/mudryi/phd_projects/xml-roberta-finetune-reviews/unlp_sharedtask_dataset/test.csv'
+# model_path = "/home/mudryi/phd_projects/xml-roberta-finetune-reviews/trained_models/1ozc/model_1ozc_14" # unlp ukr-roberta
+# model_path = "/home/mudryi/phd_projects/xml-roberta-finetune-reviews/trained_models/zzl4/model_zzl4_14" # unlp sentence-transformers
+# model_path = '/home/mudryi/phd_projects/xml-roberta-finetune-reviews/trained_models/p0g9/model_p0g9_14' # unlp xml_roberta
