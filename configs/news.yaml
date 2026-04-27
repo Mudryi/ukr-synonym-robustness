@@ -1,0 +1,21 @@
+# Defaults for the UA News dataset (5-class topic classification).
+
+dataset: news
+nclasses: 5
+dataset-path: /home/mudryi/phd_projects/xml-roberta-finetune-reviews/ua-news/test.csv
+
+# Models the original repo evaluated (reference):
+# - youscan/ukr-roberta-base
+#     ckpt: /home/mudryi/phd_projects/xml-roberta-finetune-reviews/trained_models/npz4/model_npz4_9_1000
+# - sentence-transformers/paraphrase-multilingual-mpnet-base-v2
+#     ckpt: /home/mudryi/phd_projects/xml-roberta-finetune-reviews/trained_models/1kjq/model_1kjq_9_2500
+# - xlm-roberta-base
+#     ckpt: /home/mudryi/phd_projects/xml-roberta-finetune-reviews/trained_models/3rzr/model_3rzr_9_2500
+
+sim-threshold: 0.7
+synonym-num: 200
+
+bert-mode: fill-mask
+mlm-model: FacebookAI/xlm-roberta-large
+cos-sim-threshold: 0.33
+max-changes-frac: 0.4

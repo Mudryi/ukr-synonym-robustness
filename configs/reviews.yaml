@@ -1,0 +1,25 @@
+# Defaults for the UA Reviews dataset (5-class sentiment).
+# Override any field on the CLI; CLI flags win.
+
+dataset: reviews
+nclasses: 5
+dataset-path: /home/mudryi/phd_projects/xml-roberta-finetune-reviews/cross_domain_uk_reviews/test_reviews.csv
+
+# Pick one of the three by passing --target-model / --target-checkpoint on the CLI.
+# Models the original repo evaluated (kept here for reference):
+# - youscan/ukr-roberta-base
+#     ckpt: /home/mudryi/phd_projects/xml-roberta-finetune-reviews/trained_models/7ddc/model_7ddc_7_600
+# - sentence-transformers/paraphrase-multilingual-mpnet-base-v2
+#     ckpt: /home/mudryi/phd_projects/xml-roberta-finetune-reviews/trained_models/7yuz/model_7yuz_4_1200
+# - xlm-roberta-base
+#     ckpt: /home/mudryi/phd_projects/xml-roberta-finetune-reviews/trained_models/tmdk/model_tmdk_7_600
+
+# textfooler hyperparams (used by --attack textfooler)
+sim-threshold: 0.7
+synonym-num: 200
+
+# bert_attack hyperparams (used by --attack bert_attack)
+bert-mode: fill-mask
+mlm-model: FacebookAI/xlm-roberta-large
+cos-sim-threshold: 0.33
+max-changes-frac: 0.4

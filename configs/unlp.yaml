@@ -1,0 +1,21 @@
+# Defaults for the UNLP-2025 manipulation-detection dataset (binary).
+
+dataset: unlp
+nclasses: 2
+dataset-path: /home/mudryi/phd_projects/xml-roberta-finetune-reviews/unlp_sharedtask_dataset/test.csv
+
+# Models the original repo evaluated (reference):
+# - youscan/ukr-roberta-base
+#     ckpt: /home/mudryi/phd_projects/xml-roberta-finetune-reviews/trained_models/1ozc/model_1ozc_14
+# - sentence-transformers/paraphrase-multilingual-mpnet-base-v2
+#     ckpt: /home/mudryi/phd_projects/xml-roberta-finetune-reviews/trained_models/zzl4/model_zzl4_14
+# - xlm-roberta-base
+#     ckpt: /home/mudryi/phd_projects/xml-roberta-finetune-reviews/trained_models/p0g9/model_p0g9_14
+
+sim-threshold: 0.7
+synonym-num: 200
+
+bert-mode: fill-mask
+mlm-model: FacebookAI/xlm-roberta-large
+cos-sim-threshold: 0.33
+max-changes-frac: 0.4

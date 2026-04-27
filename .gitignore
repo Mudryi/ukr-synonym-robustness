@@ -1,3 +1,10 @@
 dev_env
 __pycache__
-resources
+*.pyc
+.venv
+.env
+
+# Editor / OS noise
+.DS_Store
+.idea/
+.vscode/
