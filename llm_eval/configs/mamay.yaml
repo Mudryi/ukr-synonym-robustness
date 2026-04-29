@@ -1,0 +1,20 @@
+# MamayLM-Gemma-3-12B-IT-v1.0 default config.
+#
+# Backend choice:
+#   auto       — pick by hardware (cuda_4bit on RTX 3090, mps_fp16 on Apple)
+#   cuda_4bit  — 4-bit nf4, bf16 compute (RTX 3090, 24 GB VRAM target)
+#   cuda_bf16  — full bf16 (A6000 / A100, 40+ GB VRAM)
+#   mps_fp16   — fp16 on Apple Silicon (M-series, 32+ GB unified memory)
+#   cpu        — fp32 fallback for tests only
+
+model_id: INSAIT-Institute/MamayLM-Gemma-3-12B-IT-v1.0
+backend: auto
+
+# Decoding — greedy by default for byte-stable predictions.
+max_new_tokens: 16
+do_sample: false
+temperature: 0.0
+top_p: 1.0
+
+seed: 1914
+trust_remote_code: false

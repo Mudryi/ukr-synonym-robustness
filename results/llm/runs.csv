@@ -1,0 +1,2 @@
+llm_model,dataset,attack,classifier,attack_dir,prompt_hash,backend,n_total,n_parse_failed_orig,n_parse_failed_adv,n_classifier_success,llm_clean_acc,llm_adv_acc,robustness_gap,llm_consistency,llm_transfer_asr,n_transfer_eligible,wall_time_sec,output_dir
+INSAIT-Institute/MamayLM-Gemma-3-12B-IT-v1.0,reviews,textfooler,ukr_roberta,results/textfooler/reviews__ukr_roberta,8c7bd046cc4b,cuda_4bit,9769,0,0,3819,0.44979015252328797,0.3413860169925274,0.10840413553076056,0.8360118742962432,0.37144790257104193,1478,4253.310070514679,results/llm/mamay__textfooler__reviews__ukr_roberta
