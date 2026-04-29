@@ -1,0 +1,64 @@
+\begin{table*}[!ht]
+  \centering
+  % \small
+  \setlength{\tabcolsep}{5pt}
+  \renewcommand{\arraystretch}{1.15}
+  \begin{tabular}{llccccc}
+    \hline
+    \textbf{Dataset} & \textbf{Model} & \textbf{Orig.} & \textbf{Adv.} & \textbf{Drop} & \textbf{Change} & \textbf{Queries} \\
+    & & \textbf{Acc.} & \textbf{Acc.} & & \textbf{Rate} & \\
+    \hline
+    \multirow{3}{*}{Reviews}
+    & Ukr-RoBERTa & 76.28\% & 36.01\% & -40.27 & 15.80\% & 112.9 \\
+    & XLM-RoBERTa & 77.91\% & 49.73\% & -28.18 & 14.16\% & 126.8 \\
+    & SBERT       & 77.58\% & 49.70\% & -27.88 & 13.01\% & 122.1 \\
+    \hline
+    \multirow{3}{*}{UA News}
+    & Ukr-RoBERTa & 88.55\% & 73.17\% & -15.38 & 18.87\% & 50.5 \\
+    & XLM-RoBERTa & 93.52\% & 82.95\% & -10.57 & 19.87\% & 52.0 \\
+    & SBERT       & 93.46\% & 82.67\% & -10.79 & 19.11\% & 51.8 \\
+    \hline
+    \multirow{3}{*}{UNLP}
+    & Ukr-RoBERTa & 81.41\% & 47.65\% & -33.76 & 11.62\% & 343.4 \\
+    & XLM-RoBERTa & 80.10\% & 47.38\% & -32.72 & 10.57\% & 330.5 \\
+    & SBERT       & 81.67\% & 45.03\% & -36.64 & 9.95\%  & 333.5 \\
+    \hline
+  \end{tabular}
+  \caption{
+    TextFooler attack results across all datasets. 
+  }
+  \label{tab:TextFooler}
+\end{table*}
+
+
+\begin{table*}[!ht]
+  \centering
+  % \small
+  \setlength{\tabcolsep}{5pt}
+  \renewcommand{\arraystretch}{1.15}
+  \begin{tabular}{llccccc}
+    \hline
+    \textbf{Dataset} & \textbf{Model} & \textbf{Orig.} & \textbf{Adv.} & \textbf{Drop} & \textbf{Change} & \textbf{Queries} \\
+    & & \textbf{Acc.} & \textbf{Acc.} & & \textbf{Rate} & \\
+    \hline
+    \multirow{3}{*}{Reviews}
+    & Ukr-RoBERTa & 76.28\% & 63.31\% & -12.97 & 3.69\% & 29.7 \\
+    & XLM-RoBERTa & 77.91\% & 67.27\% & -10.64 & 4.47\% & 31.9 \\
+    & SBERT       & 77.58\% & 64.79\% & -12.79 & 3.74\% & 30.5 \\
+    \hline
+    \multirow{3}{*}{UA News}
+    & Ukr-RoBERTa & 98.83\% & 78.94\% & -19.89 & 15.67\% & 17.9 \\
+    & XLM-RoBERTa & 93.52\% & 69.10\% & -24.42 & 14.06\% & 16.9 \\
+    & SBERT       & 93.46\% & 66.43\% & -27.03 & 13.85\% & 16.6 \\
+    \hline
+    \multirow{3}{*}{UNLP}
+    & Ukr-RoBERTa & 81.41\% & 58.38\% & -23.03 & 5.73\% & 104.0 \\
+    & XLM-RoBERTa & 80.10\% & 61.52\% & -18.58 & 8.08\% & 109.1 \\
+    & SBERT       & 81.67\% & 57.07\% & -24.60 & 4.90\% & 101.8 \\
+    \hline
+  \end{tabular}
+  \caption{
+    BERT-Attack results across all datasets.
+  }
+  \label{tab:BertAttack}
+\end{table*}

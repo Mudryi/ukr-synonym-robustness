@@ -1,0 +1,192 @@
+mudryi@mudryi-B550-AORUS-ELITE-V2:~/phd_projects/ukr-synonym-robustness$ python scripts/run_paper_experiments.py
+planning 18 runs (attacks=['textfooler', 'bert_attack'], datasets=['reviews', 'news', 'unlp'], models=['ukr_roberta', 'sbert_mpnet', 'xlmr_base'])
+
+[1/18] attack=textfooler dataset=reviews model=ukr_roberta
+$ /home/mudryi/phd_projects/ukr-synonym-robustness/dev_env/bin/python -m src.cli.run_attack --config /home/mudryi/phd_projects/ukr-synonym-robustness/configs/reviews
+.yaml --attack textfooler --target-model youscan/ukr-roberta-base --target-checkpoint /home/mudryi/phd_projects/xml-roberta-finetune-reviews/trained_models/7ddc/mode
+l_7ddc_7_600 --output-dir /home/mudryi/phd_projects/ukr-synonym-robustness/results/textfooler/reviews__ukr_roberta --synonym-dict /home/mudryi/phd_projects/synonym_a
+ttack/synonyms_dictionaries/synonimy_info_clean.json --hand-parsed /home/mudryi/phd_projects/textfooler_ukr/hand_parsed_top_100.json --antonyms /home/mudryi/phd_proj
+ects/synonym_attack/synonyms_dictionaries/antonimy.jsonlines
+  log -> /home/mudryi/phd_projects/ukr-synonym-robustness/results/textfooler/reviews__ukr_roberta/run.log
+  exit=0 (57.6 min)
+
+[2/18] attack=textfooler dataset=reviews model=sbert_mpnet
+$ /home/mudryi/phd_projects/ukr-synonym-robustness/dev_env/bin/python -m src.cli.run_attack --config /home/mudryi/phd_projects/ukr-synonym-robustness/configs/reviews
+.yaml --attack textfooler --target-model sentence-transformers/paraphrase-multilingual-mpnet-base-v2 --target-checkpoint /home/mudryi/phd_projects/xml-roberta-finetu
+ne-reviews/trained_models/7yuz/model_7yuz_4_1200 --output-dir /home/mudryi/phd_projects/ukr-synonym-robustness/results/textfooler/reviews__sbert_mpnet --synonym-dict
+ /home/mudryi/phd_projects/synonym_attack/synonyms_dictionaries/synonimy_info_clean.json --hand-parsed /home/mudryi/phd_projects/textfooler_ukr/hand_parsed_top_100.j
+son --antonyms /home/mudryi/phd_projects/synonym_attack/synonyms_dictionaries/antonimy.jsonlines
+  log -> /home/mudryi/phd_projects/ukr-synonym-robustness/results/textfooler/reviews__sbert_mpnet/run.log
+  exit=0 (65.9 min)
+
+[3/18] attack=textfooler dataset=reviews model=xlmr_base
+$ /home/mudryi/phd_projects/ukr-synonym-robustness/dev_env/bin/python -m src.cli.run_attack --config /home/mudryi/phd_projects/ukr-synonym-robustness/configs/reviews
+.yaml --attack textfooler --target-model xlm-roberta-base --target-checkpoint /home/mudryi/phd_projects/xml-roberta-finetune-reviews/trained_models/tmdk/model_tmdk_7
+_600 --output-dir /home/mudryi/phd_projects/ukr-synonym-robustness/results/textfooler/reviews__xlmr_base --synonym-dict /home/mudryi/phd_projects/synonym_attack/syno
+nyms_dictionaries/synonimy_info_clean.json --hand-parsed /home/mudryi/phd_projects/textfooler_ukr/hand_parsed_top_100.json --antonyms /home/mudryi/phd_projects/synon
+ym_attack/synonyms_dictionaries/antonimy.jsonlines
+  log -> /home/mudryi/phd_projects/ukr-synonym-robustness/results/textfooler/reviews__xlmr_base/run.log
+  exit=0 (71.9 min)
+
+[4/18] attack=textfooler dataset=news model=ukr_roberta
+$ /home/mudryi/phd_projects/ukr-synonym-robustness/dev_env/bin/python -m src.cli.run_attack --config /home/mudryi/phd_projects/ukr-synonym-robustness/configs/news.ya
+ml --attack textfooler --target-model youscan/ukr-roberta-base --target-checkpoint /home/mudryi/phd_projects/xml-roberta-finetune-reviews/trained_models/npz4/model_n
+pz4_9_1000 --output-dir /home/mudryi/phd_projects/ukr-synonym-robustness/results/textfooler/news__ukr_roberta --synonym-dict /home/mudryi/phd_projects/synonym_attack
+/synonyms_dictionaries/synonimy_info_clean.json --hand-parsed /home/mudryi/phd_projects/textfooler_ukr/hand_parsed_top_100.json --antonyms /home/mudryi/phd_projects/
+synonym_attack/synonyms_dictionaries/antonimy.jsonlines
+  log -> /home/mudryi/phd_projects/ukr-synonym-robustness/results/textfooler/news__ukr_roberta/run.log
+  exit=0 (23.8 min)
+
+[5/18] attack=textfooler dataset=news model=sbert_mpnet
+$ /home/mudryi/phd_projects/ukr-synonym-robustness/dev_env/bin/python -m src.cli.run_attack --config /home/mudryi/phd_projects/ukr-synonym-robustness/configs/news.ya
+ml --attack textfooler --target-model sentence-transformers/paraphrase-multilingual-mpnet-base-v2 --target-checkpoint /home/mudryi/phd_projects/xml-roberta-finetune-
+reviews/trained_models/1kjq/model_1kjq_9_2500 --output-dir /home/mudryi/phd_projects/ukr-synonym-robustness/results/textfooler/news__sbert_mpnet --synonym-dict /home
+/mudryi/phd_projects/synonym_attack/synonyms_dictionaries/synonimy_info_clean.json --hand-parsed /home/mudryi/phd_projects/textfooler_ukr/hand_parsed_top_100.json --
+antonyms /home/mudryi/phd_projects/synonym_attack/synonyms_dictionaries/antonimy.jsonlines
+  log -> /home/mudryi/phd_projects/ukr-synonym-robustness/results/textfooler/news__sbert_mpnet/run.log
+  exit=0 (22.4 min)
+
+[6/18] attack=textfooler dataset=news model=xlmr_base
+$ /home/mudryi/phd_projects/ukr-synonym-robustness/dev_env/bin/python -m src.cli.run_attack --config /home/mudryi/phd_projects/ukr-synonym-robustness/configs/news.ya
+ml --attack textfooler --target-model xlm-roberta-base --target-checkpoint /home/mudryi/phd_projects/xml-roberta-finetune-reviews/trained_models/3rzr/model_3rzr_9_25
+00 --output-dir /home/mudryi/phd_projects/ukr-synonym-robustness/results/textfooler/news__xlmr_base --synonym-dict /home/mudryi/phd_projects/synonym_attack/synonyms_
+dictionaries/synonimy_info_clean.json --hand-parsed /home/mudryi/phd_projects/textfooler_ukr/hand_parsed_top_100.json --antonyms /home/mudryi/phd_projects/synonym_at
+tack/synonyms_dictionaries/antonimy.jsonlines
+  log -> /home/mudryi/phd_projects/ukr-synonym-robustness/results/textfooler/news__xlmr_base/run.log
+  exit=0 (22.4 min)
+
+[7/18] attack=textfooler dataset=unlp model=ukr_roberta
+$ /home/mudryi/phd_projects/ukr-synonym-robustness/dev_env/bin/python -m src.cli.run_attack --config /home/mudryi/phd_projects/ukr-synonym-robustness/configs/unlp.ya
+ml --attack textfooler --target-model youscan/ukr-roberta-base --target-checkpoint /home/mudryi/phd_projects/xml-roberta-finetune-reviews/trained_models/1ozc/model_1
+ozc_14 --output-dir /home/mudryi/phd_projects/ukr-synonym-robustness/results/textfooler/unlp__ukr_roberta --synonym-dict /home/mudryi/phd_projects/synonym_attack/syn
+onyms_dictionaries/synonimy_info_clean.json --hand-parsed /home/mudryi/phd_projects/textfooler_ukr/hand_parsed_top_100.json --antonyms /home/mudryi/phd_projects/syno
+nym_attack/synonyms_dictionaries/antonimy.jsonlines
+  log -> /home/mudryi/phd_projects/ukr-synonym-robustness/results/textfooler/unlp__ukr_roberta/run.log
+  exit=0 (21.9 min)
+
+[8/18] attack=textfooler dataset=unlp model=sbert_mpnet
+$ /home/mudryi/phd_projects/ukr-synonym-robustness/dev_env/bin/python -m src.cli.run_attack --config /home/mudryi/phd_projects/ukr-synonym-robustness/configs/unlp.ya
+ml --attack textfooler --target-model sentence-transformers/paraphrase-multilingual-mpnet-base-v2 --target-checkpoint /home/mudryi/phd_projects/xml-roberta-finetune-
+reviews/trained_models/zzl4/model_zzl4_14 --output-dir /home/mudryi/phd_projects/ukr-synonym-robustness/results/textfooler/unlp__sbert_mpnet --synonym-dict /home/mud
+ryi/phd_projects/synonym_attack/synonyms_dictionaries/synonimy_info_clean.json --hand-parsed /home/mudryi/phd_projects/textfooler_ukr/hand_parsed_top_100.json --anto
+nyms /home/mudryi/phd_projects/synonym_attack/synonyms_dictionaries/antonimy.jsonlines
+  log -> /home/mudryi/phd_projects/ukr-synonym-robustness/results/textfooler/unlp__sbert_mpnet/run.log
+  exit=0 (20.9 min)
+
+[9/18] attack=textfooler dataset=unlp model=xlmr_base
+$ /home/mudryi/phd_projects/ukr-synonym-robustness/dev_env/bin/python -m src.cli.run_attack --config /home/mudryi/phd_projects/ukr-synonym-robustness/configs/unlp.ya
+ml --attack textfooler --target-model xlm-roberta-base --target-checkpoint /home/mudryi/phd_projects/xml-roberta-finetune-reviews/trained_models/p0g9/model_p0g9_14 -
+-output-dir /home/mudryi/phd_projects/ukr-synonym-robustness/results/textfooler/unlp__xlmr_base --synonym-dict /home/mudryi/phd_projects/synonym_attack/synonyms_dict
+ionaries/synonimy_info_clean.json --hand-parsed /home/mudryi/phd_projects/textfooler_ukr/hand_parsed_top_100.json --antonyms /home/mudryi/phd_projects/synonym_attack
+/synonyms_dictionaries/antonimy.jsonlines
+  log -> /home/mudryi/phd_projects/ukr-synonym-robustness/results/textfooler/unlp__xlmr_base/run.log
+  exit=0 (21.3 min)
+
+[10/18] attack=bert_attack dataset=reviews model=ukr_roberta
+$ /home/mudryi/phd_projects/ukr-synonym-robustness/dev_env/bin/python -m src.cli.run_attack --config /home/mudryi/phd_projects/ukr-synonym-robustness/configs/reviews
+.yaml --attack bert_attack --target-model youscan/ukr-roberta-base --target-checkpoint /home/mudryi/phd_projects/xml-roberta-finetune-reviews/trained_models/7ddc/mod
+el_7ddc_7_600 --output-dir /home/mudryi/phd_projects/ukr-synonym-robustness/results/bert_attack/reviews__ukr_roberta --fasttext-path /home/mudryi/phd_projects/ukr-sy
+nonym-robustness/resources/fasttext_uk/cbow.uk.300.bin
+  log -> /home/mudryi/phd_projects/ukr-synonym-robustness/results/bert_attack/reviews__ukr_roberta/run.log
+  exit=0 (79.8 min)
+
+[11/18] attack=bert_attack dataset=reviews model=sbert_mpnet
+$ /home/mudryi/phd_projects/ukr-synonym-robustness/dev_env/bin/python -m src.cli.run_attack --config /home/mudryi/phd_projects/ukr-synonym-robustness/configs/reviews
+.yaml --attack bert_attack --target-model sentence-transformers/paraphrase-multilingual-mpnet-base-v2 --target-checkpoint /home/mudryi/phd_projects/xml-roberta-finet
+une-reviews/trained_models/7yuz/model_7yuz_4_1200 --output-dir /home/mudryi/phd_projects/ukr-synonym-robustness/results/bert_attack/reviews__sbert_mpnet --fasttext-p
+ath /home/mudryi/phd_projects/ukr-synonym-robustness/resources/fasttext_uk/cbow.uk.300.bin
+  log -> /home/mudryi/phd_projects/ukr-synonym-robustness/results/bert_attack/reviews__sbert_mpnet/run.log
+  exit=0 (85.6 min)
+
+[12/18] attack=bert_attack dataset=reviews model=xlmr_base
+$ /home/mudryi/phd_projects/ukr-synonym-robustness/dev_env/bin/python -m src.cli.run_attack --config /home/mudryi/phd_projects/ukr-synonym-robustness/configs/reviews
+.yaml --attack bert_attack --target-model xlm-roberta-base --target-checkpoint /home/mudryi/phd_projects/xml-roberta-finetune-reviews/trained_models/tmdk/model_tmdk_
+7_600 --output-dir /home/mudryi/phd_projects/ukr-synonym-robustness/results/bert_attack/reviews__xlmr_base --fasttext-path /home/mudryi/phd_projects/ukr-synonym-robu
+stness/resources/fasttext_uk/cbow.uk.300.bin
+  log -> /home/mudryi/phd_projects/ukr-synonym-robustness/results/bert_attack/reviews__xlmr_base/run.log
+  exit=0 (88.5 min)
+
+[13/18] attack=bert_attack dataset=news model=ukr_roberta
+$ /home/mudryi/phd_projects/ukr-synonym-robustness/dev_env/bin/python -m src.cli.run_attack --config /home/mudryi/phd_projects/ukr-synonym-robustness/configs/news.ya
+ml --attack bert_attack --target-model youscan/ukr-roberta-base --target-checkpoint /home/mudryi/phd_projects/xml-roberta-finetune-reviews/trained_models/npz4/model_
+npz4_9_1000 --output-dir /home/mudryi/phd_projects/ukr-synonym-robustness/results/bert_attack/news__ukr_roberta --fasttext-path /home/mudryi/phd_projects/ukr-synonym
+-robustness/resources/fasttext_uk/cbow.uk.300.bin
+  log -> /home/mudryi/phd_projects/ukr-synonym-robustness/results/bert_attack/news__ukr_roberta/run.log
+  exit=0 (35.5 min)
+
+[14/18] attack=bert_attack dataset=news model=sbert_mpnet
+$ /home/mudryi/phd_projects/ukr-synonym-robustness/dev_env/bin/python -m src.cli.run_attack --config /home/mudryi/phd_projects/ukr-synonym-robustness/configs/news.ya
+ml --attack bert_attack --target-model sentence-transformers/paraphrase-multilingual-mpnet-base-v2 --target-checkpoint /home/mudryi/phd_projects/xml-roberta-finetune
+-reviews/trained_models/1kjq/model_1kjq_9_2500 --output-dir /home/mudryi/phd_projects/ukr-synonym-robustness/results/bert_attack/news__sbert_mpnet --fasttext-path /h
+ome/mudryi/phd_projects/ukr-synonym-robustness/resources/fasttext_uk/cbow.uk.300.bin
+  log -> /home/mudryi/phd_projects/ukr-synonym-robustness/results/bert_attack/news__sbert_mpnet/run.log
+  exit=0 (32.6 min)
+
+[15/18] attack=bert_attack dataset=news model=xlmr_base
+$ /home/mudryi/phd_projects/ukr-synonym-robustness/dev_env/bin/python -m src.cli.run_attack --config /home/mudryi/phd_projects/ukr-synonym-robustness/configs/news.ya
+ml --attack bert_attack --target-model xlm-roberta-base --target-checkpoint /home/mudryi/phd_projects/xml-roberta-finetune-reviews/trained_models/3rzr/model_3rzr_9_2
+500 --output-dir /home/mudryi/phd_projects/ukr-synonym-robustness/results/bert_attack/news__xlmr_base --fasttext-path /home/mudryi/phd_projects/ukr-synonym-robustnes
+s/resources/fasttext_uk/cbow.uk.300.bin
+  log -> /home/mudryi/phd_projects/ukr-synonym-robustness/results/bert_attack/news__xlmr_base/run.log
+  exit=0 (33.2 min)
+
+[16/18] attack=bert_attack dataset=unlp model=ukr_roberta
+$ /home/mudryi/phd_projects/ukr-synonym-robustness/dev_env/bin/python -m src.cli.run_attack --config /home/mudryi/phd_projects/ukr-synonym-robustness/configs/unlp.ya
+ml --attack bert_attack --target-model youscan/ukr-roberta-base --target-checkpoint /home/mudryi/phd_projects/xml-roberta-finetune-reviews/trained_models/1ozc/model_
+1ozc_14 --output-dir /home/mudryi/phd_projects/ukr-synonym-robustness/results/bert_attack/unlp__ukr_roberta --fasttext-path /home/mudryi/phd_projects/ukr-synonym-rob
+ustness/resources/fasttext_uk/cbow.uk.300.bin
+  log -> /home/mudryi/phd_projects/ukr-synonym-robustness/results/bert_attack/unlp__ukr_roberta/run.log
+  exit=0 (6.6 min)
+
+[17/18] attack=bert_attack dataset=unlp model=sbert_mpnet
+$ /home/mudryi/phd_projects/ukr-synonym-robustness/dev_env/bin/python -m src.cli.run_attack --config /home/mudryi/phd_projects/ukr-synonym-robustness/configs/unlp.ya
+ml --attack bert_attack --target-model sentence-transformers/paraphrase-multilingual-mpnet-base-v2 --target-checkpoint /home/mudryi/phd_projects/xml-roberta-finetune
+-reviews/trained_models/zzl4/model_zzl4_14 --output-dir /home/mudryi/phd_projects/ukr-synonym-robustness/results/bert_attack/unlp__sbert_mpnet --fasttext-path /home/
+mudryi/phd_projects/ukr-synonym-robustness/resources/fasttext_uk/cbow.uk.300.bin
+  log -> /home/mudryi/phd_projects/ukr-synonym-robustness/results/bert_attack/unlp__sbert_mpnet/run.log
+  exit=0 (6.7 min)
+
+[18/18] attack=bert_attack dataset=unlp model=xlmr_base
+$ /home/mudryi/phd_projects/ukr-synonym-robustness/dev_env/bin/python -m src.cli.run_attack --config /home/mudryi/phd_projects/ukr-synonym-robustness/configs/unlp.ya
+ml --attack bert_attack --target-model xlm-roberta-base --target-checkpoint /home/mudryi/phd_projects/xml-roberta-finetune-reviews/trained_models/p0g9/model_p0g9_14
+--output-dir /home/mudryi/phd_projects/ukr-synonym-robustness/results/bert_attack/unlp__xlmr_base --fasttext-path /home/mudryi/phd_projects/ukr-synonym-robustness/re
+sources/fasttext_uk/cbow.uk.300.bin
+  log -> /home/mudryi/phd_projects/ukr-synonym-robustness/results/bert_attack/unlp__xlmr_base/run.log
+  exit=0 (7.3 min)
+
+grid wall time: 703.9 min
+
+wrote tables -> /home/mudryi/phd_projects/ukr-synonym-robustness/results/summary_tables.md
+========================================================================
+# Paper-grid attack results
+
+## Summary — textfooler
+
+Cell format: **ASR%** · orig_acc → adv_acc · avg_queries · avg_change_rate · avg_sem_sim
+
+| dataset | ukr-roberta-base | paraphrase-mpnet | xlm-roberta-base |
+|---|---|---|---|
+| reviews | **51.2%** · 0.763 → 0.372 · q=112.2 · Δ=0.152 · sim=0.778 | **36.0%** · 0.776 → 0.497 · q=123.2 · Δ=0.128 · sim=0.758 | **34.7%** · 0.779 → 0.509 · q=129
+.1 · Δ=0.141 · sim=0.756 |
+| news | **8.1%** · 0.987 → 0.907 · q=54.0 · Δ=0.227 · sim=0.774 | **11.2%** · 0.937 → 0.832 · q=52.8 · Δ=0.197 · sim=0.774 | **10.8%** · 0.936 → 0.836 · q=53.0 · Δ=
+0.200 · sim=0.776 |
+| unlp | **39.9%** · 0.814 → 0.490 · q=347.4 · Δ=0.113 · sim=0.751 | **48.4%** · 0.817 → 0.421 · q=319.1 · Δ=0.100 · sim=0.757 | **37.9%** · 0.801 → 0.497 · q=338.1
+· Δ=0.111 · sim=0.747 |
+
+
+## Summary — bert_attack
+
+Cell format: **ASR%** · orig_acc → adv_acc · avg_queries · avg_change_rate · avg_sem_sim
+
+| dataset | ukr-roberta-base | paraphrase-mpnet | xlm-roberta-base |
+|---|---|---|---|
+| reviews | **14.0%** · 0.763 → 0.656 · q=33.3 · Δ=0.130 · sim=0.584 | **14.7%** · 0.776 → 0.661 · q=33.4 · Δ=0.128 · sim=0.588 | **12.6%** · 0.779 → 0.681 · q=33.4
+· Δ=0.146 · sim=0.583 |
+| news | **14.2%** · 0.987 → 0.847 · q=19.2 · Δ=0.281 · sim=0.437 | **21.4%** · 0.937 → 0.736 · q=18.9 · Δ=0.270 · sim=0.438 | **19.9%** · 0.936 → 0.750 · q=19.1 · Δ
+=0.273 · sim=0.444 |
+| unlp | **14.5%** · 0.814 → 0.696 · q=41.5 · Δ=0.142 · sim=0.549 | **20.2%** · 0.817 → 0.652 · q=44.1 · Δ=0.138 · sim=0.584 | **14.4%** · 0.801 → 0.686 · q=44.9 · Δ
+=0.121 · sim=0.555 |
+
+
+mudryi@mudryi-B550-AORUS-ELITE-V2:~/phd_projects/ukr-synonym-robustness$ tmux capture-pane -S - -E - -p > output.txt
+
