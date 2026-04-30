@@ -1,0 +1,32 @@
+{
+  "llm_model": "INSAIT-Institute/MamayLM-Gemma-3-12B-IT-v1.0",
+  "dataset": "unlp",
+  "attack": "textfooler",
+  "classifier": "sbert_mpnet",
+  "attack_dir": "results/textfooler/unlp__sbert_mpnet",
+  "prompt_hash": "d7ab791a7088",
+  "backend": "cuda_4bit",
+  "config": {
+    "model_id": "INSAIT-Institute/MamayLM-Gemma-3-12B-IT-v1.0",
+    "backend": "cuda_4bit",
+    "max_new_tokens": 16,
+    "do_sample": false,
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "seed": 1914,
+    "limit": null,
+    "dataset": "unlp",
+    "attack_dir": "results/textfooler/unlp__sbert_mpnet"
+  },
+  "n_total": 382,
+  "n_parse_failed_orig": 0,
+  "n_parse_failed_adv": 0,
+  "n_classifier_success": 151,
+  "llm_clean_acc": 0.6884816753926701,
+  "llm_adv_acc": 0.6701570680628273,
+  "robustness_gap": 0.018324607329842868,
+  "llm_consistency": 0.8298429319371727,
+  "llm_transfer_asr": 0.2828282828282828,
+  "n_transfer_eligible": 99,
+  "wall_time_sec": 235.2949275970459
+}

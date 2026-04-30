@@ -1,9 +1,9 @@
 {
   "llm_model": "INSAIT-Institute/MamayLM-Gemma-3-12B-IT-v1.0",
   "dataset": "reviews",
-  "attack": "textfooler",
-  "classifier": "ukr_roberta",
-  "attack_dir": "results/textfooler/reviews__ukr_roberta",
+  "attack": "bert_attack",
+  "classifier": "sbert_mpnet",
+  "attack_dir": "results/bert_attack/reviews__sbert_mpnet",
   "prompt_hash": "8c7bd046cc4b",
   "backend": "cuda_4bit",
   "config": {
@@ -16,17 +16,17 @@
     "seed": 1914,
     "limit": null,
     "dataset": "reviews",
-    "attack_dir": "results/textfooler/reviews__ukr_roberta"
+    "attack_dir": "results/bert_attack/reviews__sbert_mpnet"
   },
   "n_total": 9769,
   "n_parse_failed_orig": 0,
   "n_parse_failed_adv": 0,
-  "n_classifier_success": 3819,
+  "n_classifier_success": 1117,
   "llm_clean_acc": 0.44979015252328797,
-  "llm_adv_acc": 0.3413860169925274,
-  "robustness_gap": 0.10840413553076056,
-  "llm_consistency": 0.8360118742962432,
-  "llm_transfer_asr": 0.37144790257104193,
-  "n_transfer_eligible": 1478,
-  "wall_time_sec": 0.07352972030639648
+  "llm_adv_acc": 0.3371890674582864,
+  "robustness_gap": 0.11260108506500155,
+  "llm_consistency": 0.8258777766403931,
+  "llm_transfer_asr": 0.3843137254901961,
+  "n_transfer_eligible": 255,
+  "wall_time_sec": 4290.563300609589
 }
