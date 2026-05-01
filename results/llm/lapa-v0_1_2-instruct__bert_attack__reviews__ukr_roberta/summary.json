@@ -1,0 +1,32 @@
+{
+  "llm_model": "lapa-llm/lapa-v0.1.2-instruct",
+  "dataset": "reviews",
+  "attack": "bert_attack",
+  "classifier": "ukr_roberta",
+  "attack_dir": "results/bert_attack/reviews__ukr_roberta",
+  "prompt_hash": "8c7bd046cc4b",
+  "backend": "cuda_4bit",
+  "config": {
+    "model_id": "lapa-llm/lapa-v0.1.2-instruct",
+    "backend": "cuda_4bit",
+    "max_new_tokens": 16,
+    "do_sample": false,
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "seed": 1914,
+    "limit": null,
+    "dataset": "reviews",
+    "attack_dir": "results/bert_attack/reviews__ukr_roberta"
+  },
+  "n_total": 9769,
+  "n_parse_failed_orig": 0,
+  "n_parse_failed_adv": 0,
+  "n_classifier_success": 1042,
+  "llm_clean_acc": 0.2860067560651039,
+  "llm_adv_acc": 0.24280888524925787,
+  "robustness_gap": 0.04319787081584603,
+  "llm_consistency": 0.8992732111782168,
+  "llm_transfer_asr": 0.15425531914893617,
+  "n_transfer_eligible": 188,
+  "wall_time_sec": 3759.552037715912
+}

@@ -1,0 +1,32 @@
+{
+  "llm_model": "lapa-llm/lapa-v0.1.2-instruct",
+  "dataset": "news",
+  "attack": "textfooler",
+  "classifier": "sbert_mpnet",
+  "attack_dir": "results/textfooler/news__sbert_mpnet",
+  "prompt_hash": "b63b607e0512",
+  "backend": "cuda_4bit",
+  "config": {
+    "model_id": "lapa-llm/lapa-v0.1.2-instruct",
+    "backend": "cuda_4bit",
+    "max_new_tokens": 16,
+    "do_sample": false,
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "seed": 1914,
+    "limit": null,
+    "dataset": "news",
+    "attack_dir": "results/textfooler/news__sbert_mpnet"
+  },
+  "n_total": 10000,
+  "n_parse_failed_orig": 61,
+  "n_parse_failed_adv": 78,
+  "n_classifier_success": 1050,
+  "llm_clean_acc": 0.6475500553375592,
+  "llm_adv_acc": 0.6322314049586777,
+  "robustness_gap": 0.015318650378881471,
+  "llm_consistency": 0.9280016156720186,
+  "llm_transfer_asr": 0.1013745704467354,
+  "n_transfer_eligible": 582,
+  "wall_time_sec": 3628.013813972473
+}

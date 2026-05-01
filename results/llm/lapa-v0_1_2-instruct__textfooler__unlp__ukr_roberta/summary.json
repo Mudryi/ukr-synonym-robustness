@@ -1,0 +1,32 @@
+{
+  "llm_model": "lapa-llm/lapa-v0.1.2-instruct",
+  "dataset": "unlp",
+  "attack": "textfooler",
+  "classifier": "ukr_roberta",
+  "attack_dir": "results/textfooler/unlp__ukr_roberta",
+  "prompt_hash": "d7ab791a7088",
+  "backend": "cuda_4bit",
+  "config": {
+    "model_id": "lapa-llm/lapa-v0.1.2-instruct",
+    "backend": "cuda_4bit",
+    "max_new_tokens": 16,
+    "do_sample": false,
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "seed": 1914,
+    "limit": null,
+    "dataset": "unlp",
+    "attack_dir": "results/textfooler/unlp__ukr_roberta"
+  },
+  "n_total": 382,
+  "n_parse_failed_orig": 0,
+  "n_parse_failed_adv": 0,
+  "n_classifier_success": 124,
+  "llm_clean_acc": 0.6099476439790575,
+  "llm_adv_acc": 0.612565445026178,
+  "robustness_gap": -0.002617801047120505,
+  "llm_consistency": 0.9031413612565445,
+  "llm_transfer_asr": 0.09803921568627451,
+  "n_transfer_eligible": 51,
+  "wall_time_sec": 179.22771286964417
+}
