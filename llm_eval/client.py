@@ -31,6 +31,11 @@ class LLMConfig:
     top_p: float = 1.0
     seed: int = 1914
     trust_remote_code: bool = False
+    # Qwen3 chat template ships with a built-in chain-of-thought "thinking"
+    # mode. Set ``False`` to suppress it (returns label tokens directly,
+    # comparable to Gemma/Mamay/Lapa). Templates that don't reference this
+    # variable ignore it silently.
+    enable_thinking: Optional[bool] = None
     extra: dict = field(default_factory=dict)
 
 
@@ -120,11 +125,15 @@ class MamayClient:
         # Tokenize via the chat template directly. Re-tokenizing the templated
         # string (tokenize=False → tokenizer(...)) double-emits BOS on Gemma,
         # which silently produces empty completions.
+        template_kwargs: dict = {}
+        if self.cfg.enable_thinking is not None:
+            template_kwargs["enable_thinking"] = self.cfg.enable_thinking
         input_ids = self.tokenizer.apply_chat_template(
             messages,
             tokenize=True,
             add_generation_prompt=True,
             return_tensors="pt",
+            **template_kwargs,
         ).to(self.device)
         attention_mask = torch.ones_like(input_ids)
         gen_kwargs = {

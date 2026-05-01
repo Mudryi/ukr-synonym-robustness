@@ -1,0 +1,22 @@
+# Qwen3-14B (text-only, ~14 B params).
+#
+# Hardware fit: 4-bit nf4 ≈ 8 GB weights + KV cache + activations ≈ 13 GB —
+# fits a 24 GB RTX 3090 with headroom. BF16 unquantized ≈ 28 GB → won't fit;
+# use cuda_4bit unless you have ≥40 GB VRAM.
+#
+# `enable_thinking: false` suppresses Qwen3's built-in <think>...</think>
+# chain-of-thought so it emits the label directly within the 16-token budget,
+# matching Mamay/Lapa/Gemma-3 zero-shot behaviour. Flip to `true` if you want
+# a thinking-mode comparison (also bump max_new_tokens to ≥512).
+
+model_id: Qwen/Qwen3-14B
+backend: auto
+enable_thinking: false
+
+max_new_tokens: 16
+do_sample: false
+temperature: 0.0
+top_p: 1.0
+
+seed: 1914
+trust_remote_code: false

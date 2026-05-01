@@ -1,0 +1,13 @@
+# Lapa-v0.1.2-instruct config — same Gemma-3-12B base as MamayLM, so the
+# CUDA 4-bit nf4 + vision-tower-skip path applies identically.
+
+model_id: lapa-llm/lapa-v0.1.2-instruct
+backend: auto
+
+max_new_tokens: 16
+do_sample: false
+temperature: 0.0
+top_p: 1.0
+
+seed: 1914
+trust_remote_code: false
