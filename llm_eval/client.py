@@ -128,14 +128,24 @@ class MamayClient:
         template_kwargs: dict = {}
         if self.cfg.enable_thinking is not None:
             template_kwargs["enable_thinking"] = self.cfg.enable_thinking
-        input_ids = self.tokenizer.apply_chat_template(
+        encoded = self.tokenizer.apply_chat_template(
             messages,
             tokenize=True,
             add_generation_prompt=True,
             return_tensors="pt",
             **template_kwargs,
-        ).to(self.device)
-        attention_mask = torch.ones_like(input_ids)
+        )
+        # Some tokenizers (e.g. Qwen3) return a BatchEncoding here; others
+        # return a bare LongTensor. Normalise to (input_ids, attention_mask).
+        if isinstance(encoded, torch.Tensor):
+            input_ids = encoded.to(self.device)
+            attention_mask = torch.ones_like(input_ids)
+        else:
+            input_ids = encoded["input_ids"].to(self.device)
+            mask = encoded.get("attention_mask")
+            attention_mask = (
+                mask.to(self.device) if mask is not None else torch.ones_like(input_ids)
+            )
         gen_kwargs = {
             "max_new_tokens": max_new_tokens or self.cfg.max_new_tokens,
             "do_sample": self.cfg.do_sample,
