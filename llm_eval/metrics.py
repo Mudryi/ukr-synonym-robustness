@@ -32,6 +32,16 @@ class LLMSummary:
     llm_transfer_asr: float = 0.0          # see _compute_transfer_asr
     n_transfer_eligible: int = 0           # denominator for transfer ASR
 
+    # Conditional ASR: P(adv_wrong | orig_correct) — independent of the
+    # underlying classifier; "given the LLM was originally right, how
+    # often does the perturbation flip it to wrong?"
+    llm_conditional_asr: float = 0.0
+    n_conditional_eligible: int = 0        # rows where both parsed and orig is correct
+
+    # flip rate: fraction of all examples where the LLM gave a different
+    # label on adv vs orig (denominator = n_total per user definition).
+    llm_flip_rate: float = 0.0
+
     wall_time_sec: float = 0.0
 
     def to_dict(self) -> dict:
@@ -77,6 +87,22 @@ def aggregate(rows: Iterable[dict], **meta) -> LLMSummary:
 
     n_classifier_success = sum(1 for r in rows if r["classifier_status"] == "SUCCESS")
 
+    # Conditional ASR: P(adv wrong | orig correct), agnostic to the classifier.
+    cond_eligible = [
+        r for r in parsed_both
+        if r["llm_orig_label"] == r["true_label"]
+    ]
+    cond_failed = sum(1 for r in cond_eligible if r["llm_adv_label"] != r["true_label"])
+    cond_asr = _safe_div(cond_failed, len(cond_eligible))
+
+    # Flip rate: any example where the LLM's label changed (orig vs adv).
+    # Denominator = n_total (per user definition); parse-failed rows can't
+    # be determined to flip, so they contribute 0 to the numerator.
+    flipped = sum(
+        1 for r in parsed_both if r["llm_orig_label"] != r["llm_adv_label"]
+    )
+    flip_rate = _safe_div(flipped, n_total)
+
     return LLMSummary(
         n_total=n_total,
         n_parse_failed_orig=n_pf_orig,
@@ -88,6 +114,9 @@ def aggregate(rows: Iterable[dict], **meta) -> LLMSummary:
         llm_consistency=consistency,
         llm_transfer_asr=transfer_asr,
         n_transfer_eligible=len(eligible),
+        llm_conditional_asr=cond_asr,
+        n_conditional_eligible=len(cond_eligible),
+        llm_flip_rate=flip_rate,
         **meta,
     )
 
