@@ -1,0 +1,32 @@
+{
+  "llm_model": "google/gemma-3-12b-it",
+  "dataset": "unlp",
+  "attack": "bert_attack",
+  "classifier": "sbert_mpnet",
+  "attack_dir": "results/bert_attack/unlp__sbert_mpnet",
+  "prompt_hash": "d7ab791a7088",
+  "backend": "cuda_4bit",
+  "config": {
+    "model_id": "google/gemma-3-12b-it",
+    "backend": "cuda_4bit",
+    "max_new_tokens": 16,
+    "do_sample": false,
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "seed": 1914,
+    "limit": null,
+    "dataset": "unlp",
+    "attack_dir": "results/bert_attack/unlp__sbert_mpnet"
+  },
+  "n_total": 382,
+  "n_parse_failed_orig": 0,
+  "n_parse_failed_adv": 0,
+  "n_classifier_success": 63,
+  "llm_clean_acc": 0.7931937172774869,
+  "llm_adv_acc": 0.7513089005235603,
+  "robustness_gap": 0.041884816753926635,
+  "llm_consistency": 0.9267015706806283,
+  "llm_transfer_asr": 0.13333333333333333,
+  "n_transfer_eligible": 45,
+  "wall_time_sec": 230.0159296989441
+}

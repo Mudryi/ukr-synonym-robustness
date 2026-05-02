@@ -1,0 +1,32 @@
+{
+  "llm_model": "google/gemma-3-12b-it",
+  "dataset": "unlp",
+  "attack": "textfooler",
+  "classifier": "xlmr_base",
+  "attack_dir": "results/textfooler/unlp__xlmr_base",
+  "prompt_hash": "d7ab791a7088",
+  "backend": "cuda_4bit",
+  "config": {
+    "model_id": "google/gemma-3-12b-it",
+    "backend": "cuda_4bit",
+    "max_new_tokens": 16,
+    "do_sample": false,
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "seed": 1914,
+    "limit": null,
+    "dataset": "unlp",
+    "attack_dir": "results/textfooler/unlp__xlmr_base"
+  },
+  "n_total": 382,
+  "n_parse_failed_orig": 0,
+  "n_parse_failed_adv": 0,
+  "n_classifier_success": 116,
+  "llm_clean_acc": 0.7931937172774869,
+  "llm_adv_acc": 0.6989528795811518,
+  "robustness_gap": 0.09424083769633507,
+  "llm_consistency": 0.8638743455497382,
+  "llm_transfer_asr": 0.35802469135802467,
+  "n_transfer_eligible": 81,
+  "wall_time_sec": 229.8710596561432
+}

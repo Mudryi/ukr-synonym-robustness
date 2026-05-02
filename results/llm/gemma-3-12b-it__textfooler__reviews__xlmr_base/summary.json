@@ -1,0 +1,32 @@
+{
+  "llm_model": "google/gemma-3-12b-it",
+  "dataset": "reviews",
+  "attack": "textfooler",
+  "classifier": "xlmr_base",
+  "attack_dir": "results/textfooler/reviews__xlmr_base",
+  "prompt_hash": "8c7bd046cc4b",
+  "backend": "cuda_4bit",
+  "config": {
+    "model_id": "google/gemma-3-12b-it",
+    "backend": "cuda_4bit",
+    "max_new_tokens": 16,
+    "do_sample": false,
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "seed": 1914,
+    "limit": null,
+    "dataset": "reviews",
+    "attack_dir": "results/textfooler/reviews__xlmr_base"
+  },
+  "n_total": 9769,
+  "n_parse_failed_orig": 0,
+  "n_parse_failed_adv": 0,
+  "n_classifier_success": 2639,
+  "llm_clean_acc": 0.4067970109530146,
+  "llm_adv_acc": 0.28058143105742656,
+  "robustness_gap": 0.12621557989558807,
+  "llm_consistency": 0.7845224690347016,
+  "llm_transfer_asr": 0.45548387096774196,
+  "n_transfer_eligible": 775,
+  "wall_time_sec": 5695.717366218567
+}
